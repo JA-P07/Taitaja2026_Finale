@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dj2gjbb68suos"]
+
+[ext_resource type="Script" uid="uid://j6bto8xq13fg" path="res://Assets/Scripts/CounterMinigame.gd" id="1_bkter"]
+[ext_resource type="FontFile" uid="uid://o8edqvs7pi3r" path="res://Assets/Fonts/Pixelmania.ttf" id="2_pvqbc"]
+
+[node name="Counter Minigame" type="Node2D" unique_id=944603482]
+position = Vector2(606, 305)
+script = ExtResource("1_bkter")
+
+[node name="StatusText" type="Label" parent="." unique_id=1500627938]
+offset_left = -42.0
+offset_top = -149.0
+offset_right = 119.10004
+offset_bottom = -68.600006
+theme_override_fonts/font = ExtResource("2_pvqbc")
+text = "PRESS"
+horizontal_alignment = 1
+vertical_alignment = 1
