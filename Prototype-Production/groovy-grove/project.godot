@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Groovy Grove"
+run/main_scene="res://Assets/Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/use_filter=false
 boot_splash/image="uid://bdk0l40vbd6xj"
