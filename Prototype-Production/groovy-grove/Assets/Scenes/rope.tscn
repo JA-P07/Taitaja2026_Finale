@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://pvb65av62yds"]
+
+[ext_resource type="Script" uid="uid://cgiysuevn8cp2" path="res://Assets/Scripts/rope.gd" id="1_vhw88"]
+
+[node name="Rope" type="Node2D" unique_id=1087010511 node_paths=PackedStringArray("player1", "player2", "line_2d")]
+script = ExtResource("1_vhw88")
+player1 = NodePath("")
+player2 = NodePath("")
+line_2d = NodePath("")
+spring_strength = 10.0

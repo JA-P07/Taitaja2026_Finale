@@ -6,7 +6,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1xgp"]
 radius = 9.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1888182209]
+[node name="Player" type="CharacterBody2D" unique_id=688005446]
+y_sort_enabled = true
 script = ExtResource("1_7dd06")
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=2053512474]
