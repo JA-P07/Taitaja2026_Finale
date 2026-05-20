@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dt34xso2u3v0"]
 
-[ext_resource type="Script" uid="uid://nf53tllaw4el" path="res://Assets/Scripts/Item.gd" id="1_4vbt0"]
+[ext_resource type="Script" uid="uid://nf53tllaw4el" path="res://Assets/Scripts/Trash.gd" id="1_4vbt0"]
 [ext_resource type="PackedScene" uid="uid://caknj5owear27" path="res://Assets/Scenes/interactable.tscn" id="1_viabb"]
 [ext_resource type="Texture2D" uid="uid://ysdpbg3ft0o1" path="res://icon.svg" id="2_4vbt0"]
 

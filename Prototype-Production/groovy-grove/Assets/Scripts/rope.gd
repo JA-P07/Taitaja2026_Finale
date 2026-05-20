@@ -36,7 +36,7 @@ func _process(_delta):
 		_raycast.target_position = _raycast.to_local(player2.global_position)
 		$RopeCol/CollisionShape2D.shape.a = Vector2(player1.global_position)
 		$RopeCol/CollisionShape2D.shape.b = Vector2(player2.global_position)
-	$CanvasLayer/Control/Label.text = "ROPE HEALTH = %s" % rope.ropeHealth
+##	$CanvasLayer/Control/Label.text = "ROPE HEALTH = %s" % rope.ropeHealth
 
 func _on_rope_col_body_entered(body: Node2D) -> void:
 	print("something thorny hit the rope?")

@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var playerSprite = $PlayerSprite
 
 var held_item_name = ""
-var held_item_scene: PackedScene = null
+var held_item_instance: Node2D = null
 var is_holding = false
 
 var rope_force = Vector2.ZERO
@@ -56,26 +56,27 @@ func moveAnimation():
 	else:
 		playerAnim.stop()
 
-func pickup_item(item_name, item_scene):
-	if is_holding:
-		pass
-	else:
-		is_holding = true
-		held_item_name = item_name
-		held_item_scene = item_scene
-		print("Picked up ", item_name)
+func pickup_item(item_name, item_instance):
+
+	is_holding = true
+	held_item_name = item_name
+	held_item_instance = item_instance
+	item_instance.reparent(self)
+	item_instance.position = Vector2.ZERO
+	item_instance.get_node("InteractableArea").monitoring = false
+	item_instance.get_node("InteractableArea").collision_layer = 0
+	item_instance.get_node("InteractableArea").collision_mask = 0
+	print("Player picked up" + held_item_name)
 
 func drop_item():
 
 	if !is_holding:
 		return
-	var dropped_item = held_item_scene.instantiate()
-	get_parent().add_child(dropped_item)
-	dropped_item.global_position = global_position + Vector2(0, 16)
-	print("Dropped ", held_item_name)
-	is_holding = false
+	held_item_instance.reparent(get_parent())
+	held_item_instance.global_position = global_position + Vector2(0, 16)
+	held_item_instance = null
 	held_item_name = ""
-	held_item_scene = null
+	is_holding = false
 
 func try_interact():
 	var areas = $InteractionDetector.get_overlapping_areas()
