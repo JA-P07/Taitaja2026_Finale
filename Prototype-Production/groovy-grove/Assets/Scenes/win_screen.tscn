@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cb8ohs400ibr"]
+
+[ext_resource type="Theme" uid="uid://3n2j5utityk8" path="res://Assets/Sprites/Forest.tres" id="1_7r3by"]
+[ext_resource type="Script" uid="uid://cxsxrbbo1hbs5" path="res://Assets/Scripts/win_screen.gd" id="2_3rvbh"]
+[ext_resource type="Texture2D" uid="uid://ck2jxddw66kf2" path="res://Assets/Sprites/winscreen.png" id="2_x063m"]
+[ext_resource type="AudioStream" uid="uid://yhcypdtpt2at" path="res://Assets/Audio/snd_success.wav" id="3_3rvbh"]
+
+[node name="WinScreen" type="Control" unique_id=1148019514]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7r3by")
+script = ExtResource("2_3rvbh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1752091265]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_x063m")
+
+[node name="Label" type="Label" parent="." unique_id=1011404525]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -234.0
+offset_right = 575.0
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "YOU RESTORED THE FOREST!"
+
+[node name="Button" type="Button" parent="." unique_id=1391519390]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -399.0
+offset_top = -167.0
+offset_right = -77.0
+offset_bottom = -110.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "EXIT TO MENU"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=261493171]
+stream = ExtResource("3_3rvbh")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

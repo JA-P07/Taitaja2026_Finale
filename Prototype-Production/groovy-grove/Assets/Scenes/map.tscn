@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bqqplho043dnq"]
 
+[ext_resource type="Script" uid="uid://gmusafsuoqac" path="res://Assets/Scripts/mpa.gd" id="1_hk8q3"]
 [ext_resource type="TileSet" uid="uid://c30h2fg5tr066" path="res://Assets/Sprites/tileset.tres" id="1_j0ydg"]
 [ext_resource type="PackedScene" uid="uid://cvepr88mgigw6" path="res://Assets/Scenes/player.tscn" id="3_yq1se"]
 [ext_resource type="PackedScene" uid="uid://pvb65av62yds" path="res://Assets/Scenes/rope.tscn" id="4_gup1m"]
@@ -12,16 +13,24 @@
 [ext_resource type="PackedScene" uid="uid://dt34xso2u3v0" path="res://Assets/Scenes/demo_item.tscn" id="6_gup1m"]
 [ext_resource type="PackedScene" uid="uid://ms7da37g03nn" path="res://Assets/Scenes/seedbag.tscn" id="7_rofci"]
 [ext_resource type="PackedScene" uid="uid://cs3ttjbpym02i" path="res://Assets/Scenes/task_area.tscn" id="10_rofci"]
+[ext_resource type="AudioStream" uid="uid://b1qt53k7ita7s" path="res://Assets/Audio/snd_hammer.wav" id="11_dgxbr"]
 [ext_resource type="PackedScene" uid="uid://bgecekx75qftq" path="res://Assets/Scenes/invasive_plant.tscn" id="11_gw7vj"]
 [ext_resource type="Texture2D" uid="uid://dy516meqm2ll6" path="res://Assets/Sprites/sign.png" id="12_3j4k7"]
 [ext_resource type="Texture2D" uid="uid://6wiff0rq7cxo" path="res://Assets/Sprites/trash.png" id="12_gw7vj"]
+[ext_resource type="AudioStream" uid="uid://6cu12kx040ok" path="res://Assets/Audio/snd_shovel.wav" id="12_hk8q3"]
 [ext_resource type="Theme" uid="uid://3n2j5utityk8" path="res://Assets/Sprites/Forest.tres" id="13_rofci"]
+[ext_resource type="AudioStream" uid="uid://c2oppsnod4pmo" path="res://Assets/Audio/snd_trash.wav" id="14_3vvn6"]
 [ext_resource type="Texture2D" uid="uid://bysliddcan8sv" path="res://Assets/Sprites/hole.png" id="17_8n8pr"]
+[ext_resource type="Script" uid="uid://dokn00vmrkykq" path="res://Assets/Scripts/exit.gd" id="18_fcmhn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rofci"]
 size = Vector2(250, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks7u2"]
+size = Vector2(282, 20)
+
 [node name="Map" type="Node2D" unique_id=1359664376 groups=["trash"]]
+script = ExtResource("1_hk8q3")
 
 [node name="GroundLayer" type="TileMapLayer" parent="." unique_id=1367400025]
 scale = Vector2(1.5, 1.5)
@@ -35,16 +44,16 @@ y_sort_enabled = true
 y_sort_enabled = true
 position = Vector2(144, 0)
 scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAADAAIAAQAEAAAAAAAIAAYAAQAEAAAAAAAIAAoAAQAEAAAAAAAKAAYAAQAEAAAAAAALAAQAAQAEAAAAAAALAAUAAQAEAAAAAAACAAoAAQAEAAAAAAADAAkAAQAEAAAAAAAEAAQAAQAEAAAAAAAFAAcAAQAEAAAAAAAGAAoAAQAEAAAAAAAHAAQAAQAEAAAAAAAHAAoAAQAEAAAAAAD8/wgAAQAEAAAAAAD//wYAAQAEAAAAAAD6/wcAAQAEAAAAAAD7/wcAAQAEAAAAAAD1/wcAAQAEAAAAAAD3/wQAAQAEAAAAAAD3/wgAAQAEAAAAAAD4/wMAAQAEAAAAAAD4/wcAAQAEAAAAAAD5/wkAAQAEAAAAAAD+/wkAAQAEAAAAAAAAAAkAAQAEAAAAAAAGAP3/AQAEAAAAAAAHAP7/AQAEAAAAAAAJAPz/AQAEAAAAAAAJAP7/AQAEAAAAAAAKAP3/AQAEAAAAAAAKAP//AQAEAAAAAAD+/wsAAQAAAAAAAAD//wsAAQAAAAAAAAAAAAsAAQAAAAAAAAD+/wwAAQAAAAAAAAD//wwAAQAAAAAAAAAAAAwAAQAAAAAAAAD+/w0AAQAAAAAAAAD//w0AAQAAAAAAAAAAAA0AAQAAAAAAAAD+/w4AAQAAAAAAAAD//w4AAQAAAAAAAAAAAA4AAQAAAAAAAAAYAPz/AQAEAAAAAAAYAP3/AQAEAAAAAAAaAAIAAQAEAAAAAAAcAAMAAQAEAAAAAAAdAAAAAQAEAAAAAAAeAP3/AQAEAAAAAAAfAAMAAQAEAAAAAAAfAAYAAQAEAAAAAAAgAAMAAQAEAAAAAAAiAAEAAQAEAAAAAAAiAAUAAQAEAAAAAAAkAP3/AQAEAAAAAAAkAAUAAQAEAAAAAAAkAAcAAQAEAAAAAAAlAAgAAQAEAAAAAAAmAAUAAQAEAAAAAAAnAAcAAQAEAAAAAAAnAAgAAQAEAAAAAAAoAP3/AQAEAAAAAAApAAUAAQAEAAAAAAApAAYAAQAEAAAAAAAqAAAAAQAEAAAAAAArAPz/AQAEAAAAAAArAAYAAQAEAAAAAAAsAAEAAQAEAAAAAAAuAPz/AQAEAAAAAAAuAP7/AQAEAAAAAAAuAAIAAQAEAAAAAAAuAAQAAQAEAAAAAAAuAAcAAQAEAAAAAAD4//X/AQAAAAIAAAD5//X/AQAAAAIAAAD6//X/AQAAAAIAAAD7//X/AQAAAAIAAAD8//X/AQABAAIAAAABAPX/AQAAAAIAAAACAPX/AQAAAAIAAAADAPX/AQABAAIAAAAEAPX/AQABAAIAAAAFAPX/AQAAAAIAAAAGAPX/AQAAAAIAAAAHAPX/AQABAAIAAAAIAPX/AQAAAAIAAAAJAPX/AQABAAIAAAAJAPT/AQABAAIAAAAJAPP/AQAAAAIAAAA=")
+tile_map_data = PackedByteArray("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")
 tile_set = ExtResource("1_j0ydg")
 
 [node name="InteractablesTiles" type="TileMapLayer" parent="Level" unique_id=82966191]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAGAP7/AgABAAEAAAD9//7/AgAEAAEAAAA3AAAAAgAIAAAAAAA3AAYAAgAIAAAAAAA9AAYAAgAIAAAAAABDAP//AgAIAAAAAABAAPv/AgAIAAAAAAA=")
+tile_map_data = PackedByteArray("AAAGAP7/AgABAAEAAAD9//7/AgAEAAEAAAA3AAAAAgAIAAAAAAA9AAYAAgAIAAAAAABDAP//AgAIAAAAAABAAPv/AgAIAAAAAAD7/+L/AgAIAAAAAAA=")
 tile_set = ExtResource("1_j0ydg")
 
 [node name="Player" parent="Level" unique_id=688005446 instance=ExtResource("3_yq1se")]
-position = Vector2(123, -23)
+position = Vector2(185, 15)
 collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Level/Player" unique_id=1684216198]
@@ -53,12 +62,11 @@ position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
 [node name="Player2" parent="Level" unique_id=887908336 instance=ExtResource("3_yq1se")]
-position = Vector2(177, -13)
+position = Vector2(239, 25)
 collision_mask = 1
 playerID = 1
 
 [node name="Line2D" type="Line2D" parent="Level" unique_id=1879265267]
-position = Vector2(122, -14)
 width = 6.0
 default_color = Color(0.5, 0.21666667, 0, 1)
 
@@ -102,53 +110,64 @@ position = Vector2(-1164, 553)
 position = Vector2(1774, 18)
 required_item = "hammer"
 secondary_required_item = "ladder"
+interact_sound = ExtResource("11_dgxbr")
 
 [node name="Nests2" parent="Level" unique_id=770274624 instance=ExtResource("10_rofci")]
 position = Vector2(2157, -13)
 required_item = "hammer"
 secondary_required_item = "ladder"
+interact_sound = ExtResource("11_dgxbr")
 
 [node name="Nests3" parent="Level" unique_id=292086736 instance=ExtResource("10_rofci")]
 position = Vector2(2061, -143)
 required_item = "hammer"
 secondary_required_item = "ladder"
+interact_sound = ExtResource("11_dgxbr")
 
 [node name="Nests4" parent="Level" unique_id=387103530 instance=ExtResource("10_rofci")]
 position = Vector2(1967, 214)
 required_item = "hammer"
 secondary_required_item = "ladder"
+interact_sound = ExtResource("11_dgxbr")
 
 [node name="Nests5" parent="Level" unique_id=1670887428 instance=ExtResource("10_rofci")]
 position = Vector2(253, -580)
 required_item = "spade"
 secondary_required_item = "seedbag"
+interact_sound = ExtResource("12_hk8q3")
 
 [node name="Nests7" parent="Level" unique_id=840913041 instance=ExtResource("10_rofci")]
 position = Vector2(473, -578)
 required_item = "spade"
 secondary_required_item = "seedbag"
+interact_sound = ExtResource("12_hk8q3")
 
 [node name="Nests10" parent="Level" unique_id=224814095 instance=ExtResource("10_rofci")]
 position = Vector2(-158, -747)
 required_item = "spade"
 secondary_required_item = "seedbag"
+interact_sound = ExtResource("12_hk8q3")
 
 [node name="Nests11" parent="Level" unique_id=392760883 instance=ExtResource("10_rofci")]
 position = Vector2(-38, -747)
 required_item = "spade"
 secondary_required_item = "seedbag"
+interact_sound = ExtResource("12_hk8q3")
 
 [node name="Nests12" parent="Level" unique_id=714926003 instance=ExtResource("10_rofci")]
 position = Vector2(-39, -904)
 required_item = "spade"
 secondary_required_item = "seedbag"
+interact_sound = ExtResource("12_hk8q3")
 
 [node name="Nests13" parent="Level" unique_id=638732267 instance=ExtResource("10_rofci")]
 position = Vector2(-153, -908)
 required_item = "hammer"
 secondary_required_item = "ladder"
+interact_sound = ExtResource("11_dgxbr")
 
 [node name="WinArea" type="Area2D" parent="Level" unique_id=1010512567]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/WinArea" unique_id=684287577]
 position = Vector2(168, 1157)
@@ -229,6 +248,7 @@ position = Vector2(-460, -460)
 
 [node name="TRASH" parent="Level/TRASHES" unique_id=1871594088 instance=ExtResource("6_gup1m")]
 position = Vector2(-664, 332)
+interact_sound = ExtResource("14_3vvn6")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Level/TRASHES/TRASH" unique_id=1478051357]
 texture = ExtResource("12_gw7vj")
@@ -238,6 +258,7 @@ frame = 13
 
 [node name="TRASH2" parent="Level/TRASHES" unique_id=2035880668 instance=ExtResource("6_gup1m")]
 position = Vector2(-319, 343)
+interact_sound = ExtResource("14_3vvn6")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Level/TRASHES/TRASH2" unique_id=1175055467]
 texture = ExtResource("12_gw7vj")
@@ -247,6 +268,7 @@ frame = 5
 
 [node name="TRASH3" parent="Level/TRASHES" unique_id=489485175 instance=ExtResource("6_gup1m")]
 position = Vector2(-295, -342)
+interact_sound = ExtResource("14_3vvn6")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Level/TRASHES/TRASH3" unique_id=2119740858]
 texture = ExtResource("12_gw7vj")
@@ -256,6 +278,7 @@ frame = 5
 
 [node name="TRASH4" parent="Level/TRASHES" unique_id=1099879127 instance=ExtResource("6_gup1m")]
 position = Vector2(1382, -135)
+interact_sound = ExtResource("14_3vvn6")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Level/TRASHES/TRASH4" unique_id=90978952]
 texture = ExtResource("12_gw7vj")
@@ -371,12 +394,21 @@ position = Vector2(-163, -726)
 scale = Vector2(2, 2)
 texture = ExtResource("17_8n8pr")
 
-[node name="Sprite2D10" type="Sprite2D" parent="." unique_id=1813352002]
-position = Vector2(-155, -887)
-scale = Vector2(2, 2)
-texture = ExtResource("17_8n8pr")
-
 [node name="Sprite2D11" type="Sprite2D" parent="." unique_id=1830589309]
 position = Vector2(-38, -889)
 scale = Vector2(2, 2)
 texture = ExtResource("17_8n8pr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=385618839]
+script = ExtResource("18_fcmhn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1268551780]
+position = Vector2(172, 835)
+shape = SubResource("RectangleShape2D_ks7u2")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="StaticBody2D/CollisionShape2D" unique_id=165967655]
+scale = Vector2(1.25, 1.25)
+tile_map_data = PackedByteArray("AAD9////AgAAAAEAAAD+////AgAAAAEAAAD/////AgAAAAEAAAAAAP//AgAAAAEAAAABAP//AgAAAAEAAAACAP//AgAAAAEAAAA=")
+tile_set = ExtResource("1_j0ydg")
+
+[connection signal="body_entered" from="Level/WinArea" to="." method="_on_win_area_body_entered"]

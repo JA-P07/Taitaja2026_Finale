@@ -34,6 +34,9 @@ func _process(delta):
 			label.global_position.y -= 36
 			label.global_position.x -= label.size.x / 2
 			label.show()
+	
+	if Input.is_action_just_pressed("MiniGame_left0"):
+		tasksDone += 1
 
 func _sort_by_distance_to_player(area1, area2):
 	var area1_to_player = players.global_position.distance_to(area1.global_position)
