@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dc631wjo0fomh"]
+
+[ext_resource type="Script" uid="uid://dcx30hl5fv8a1" path="res://Assets/Scripts/spade.gd" id="1_nhu33"]
+[ext_resource type="PackedScene" uid="uid://caknj5owear27" path="res://Assets/Scenes/interactable.tscn" id="1_qd0pq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nhu33"]
+
+[node name="spade" type="Node2D" unique_id=593285829]
+script = ExtResource("1_nhu33")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=918495576]
+
+[node name="InteractableArea" parent="." unique_id=1398153216 instance=ExtResource("1_qd0pq")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" unique_id=3499363]
+shape = SubResource("CircleShape2D_nhu33")
