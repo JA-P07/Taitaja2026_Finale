@@ -1,0 +1,20 @@
+extends Node
+@onready var start = $Play;
+@onready var quit = $Quit;
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if start.is_pressed() == true:
+		playGame();
+	elif quit.is_pressed() == true:
+		quitGame();
+func quitGame():
+		get_tree().quit();
+
+func playGame():
+	get_tree().change_scene_to_file("res://Assets/Scenes/map.tscn")

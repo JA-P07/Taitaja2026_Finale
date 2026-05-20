@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://caknj5owear27"]
+
+[ext_resource type="Script" uid="uid://xpjeg8j8mw3i" path="res://Assets/Scripts/Interactable.gd" id="1_w8pc3"]
+[ext_resource type="Texture2D" uid="uid://ysdpbg3ft0o1" path="res://icon.svg" id="2_hg511"]
+
+[node name="InteractableArea" type="Area2D" unique_id=1398153216]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_w8pc3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1681328787]
+position = Vector2(100, 72)
+texture = ExtResource("2_hg511")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c4rvg0w8qedwt"]
+
+[ext_resource type="FontFile" uid="uid://o8edqvs7pi3r" path="res://Assets/Fonts/Pixelmania.ttf" id="1_4ljbt"]
+[ext_resource type="Script" uid="uid://b2yswdb5tdnd6" path="res://Assets/Scripts/InteractionManager.gd" id="1_hi275"]
+
+[node name="InteractionManager" type="Node2D" unique_id=1292909800]
+script = ExtResource("1_hi275")
+
+[node name="Label" type="Label" parent="." unique_id=1252526228]
+z_index = 20
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_4ljbt")
+text = "=E OR A= TO "
