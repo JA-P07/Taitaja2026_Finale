@@ -184,7 +184,8 @@ libraries/ = SubResource("AnimationLibrary_c3tg1")
 
 [node name="walk" type="AudioStreamPlayer" parent="." unique_id=551513081]
 stream = SubResource("AudioStreamWAV_7dd06")
-pitch_scale = 1.1
+volume_db = -10.0
+pitch_scale = 1.25
 
 [node name="InteractionDetector" type="Area2D" parent="." unique_id=741311352]
 

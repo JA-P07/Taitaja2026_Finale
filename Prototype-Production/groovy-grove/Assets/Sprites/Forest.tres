@@ -2,8 +2,44 @@
 
 [ext_resource type="FontFile" uid="uid://dkq62572qy6i6" path="res://Assets/Fonts/ari-w9500.ttf" id="1_u6l67"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6l67"]
+bg_color = Color(0.5265473, 0.6514531, 0.33384204, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stl8c"]
+bg_color = Color(0.5265473, 0.6514531, 0.33384204, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mta0j"]
+bg_color = Color(0.5265473, 0.6514531, 0.33384204, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pqup"]
+bg_color = Color(0.5265473, 0.6514531, 0.33384204, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
 [resource]
 default_font = ExtResource("1_u6l67")
 default_font_size = 16
+Button/styles/focus = SubResource("StyleBoxFlat_u6l67")
+Button/styles/hover = SubResource("StyleBoxFlat_stl8c")
+Button/styles/normal = SubResource("StyleBoxFlat_mta0j")
+Button/styles/pressed = SubResource("StyleBoxFlat_3pqup")
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 8
