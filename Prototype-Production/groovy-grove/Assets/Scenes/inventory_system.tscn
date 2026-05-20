@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://babr3wjgiex45"]
-
-[node name="InventorySystem" type="Node2D" unique_id=515989453]
-
-[node name="Label" type="Label" parent="." unique_id=80971217]
-offset_right = 40.0
-offset_bottom = 23.0
