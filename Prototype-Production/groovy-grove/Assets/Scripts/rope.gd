@@ -8,6 +8,7 @@ extends Node2D
 @onready var _raycast = $RopeRay
 @onready var _ropeArea = $RopeCol
 
+
 func _physics_process(delta):
 	if not player1 or not player2:
 		return
@@ -35,8 +36,10 @@ func _process(_delta):
 		_raycast.target_position = _raycast.to_local(player2.global_position)
 		$RopeCol/CollisionShape2D.shape.a = Vector2(player1.global_position)
 		$RopeCol/CollisionShape2D.shape.b = Vector2(player2.global_position)
-	
+	$CanvasLayer/Control/Label.text = "ROPE HEALTH = %s" % rope.ropeHealth
 
-
-func _on_rope_col_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-		print("Something thorny hit the bush.")
+func _on_rope_col_body_entered(body: Node2D) -> void:
+	print("something thorny hit the rope?")
+	rope.ropeHealth -= 1
+	if rope.ropeHealth == 0:
+		print("LOSE")
