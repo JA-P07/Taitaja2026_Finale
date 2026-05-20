@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bd4ydw7vkm1oo"]
+
+[ext_resource type="Script" uid="uid://br2j80akgwqkn" path="res://Assets/Scripts/leave.gd" id="1_juu2y"]
+[ext_resource type="PackedScene" uid="uid://caknj5owear27" path="res://Assets/Scenes/interactable.tscn" id="1_yfqun"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juu2y"]
+
+[node name="WinArea" type="Node2D" unique_id=1055566001]
+script = ExtResource("1_juu2y")
+
+[node name="InteractableArea" parent="." unique_id=1398153216 instance=ExtResource("1_yfqun")]
+action_name = "LEAVE"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" unique_id=672576476]
+scale = Vector2(30, 30)
+shape = SubResource("RectangleShape2D_juu2y")
+
+[node name="Label" type="Label" parent="." unique_id=1442274655]
+z_index = 20
+offset_left = -224.0
+offset_top = -144.0
+offset_right = 223.0
+offset_bottom = -79.0

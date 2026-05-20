@@ -7,7 +7,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhu33"]
 radius = 18.0
 
-[node name="spade" type="Node2D" unique_id=593285829]
+[node name="spade" type="Node2D" unique_id=593285829 groups=["spade"]]
+z_index = 20
 script = ExtResource("1_nhu33")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=918495576]
