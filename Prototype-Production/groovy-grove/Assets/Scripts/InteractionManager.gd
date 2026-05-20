@@ -1,6 +1,8 @@
 extends Node
 @onready var players = get_tree().get_first_node_in_group("Players")
 @onready var label = $Label;
+var tasksDone: float = 0
+var secTasksDone: int = 0
 
 const base_text = "=E OR A= TO "
 

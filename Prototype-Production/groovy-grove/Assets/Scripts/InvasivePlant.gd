@@ -7,4 +7,5 @@ func _ready():
 
 func _on_interact(player):
 	print("interacted with plant, destroying plant");
+	InteractionManager.secTasksDone += 1
 	self.queue_free();

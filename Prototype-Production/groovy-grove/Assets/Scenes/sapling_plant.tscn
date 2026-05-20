@@ -1,14 +1,16 @@
-[gd_scene format=3 uid="uid://duf0e6mauuwj3"]
+[gd_scene format=3 uid="uid://c8fll0iy2bh6"]
 
-[ext_resource type="PackedScene" uid="uid://caknj5owear27" path="res://Assets/Scenes/interactable.tscn" id="1_7lvwt"]
+[ext_resource type="Script" uid="uid://bxmlncr4oixlc" path="res://Assets/Scripts/SaplingPlant.gd" id="1_kfyp1"]
+[ext_resource type="PackedScene" uid="uid://caknj5owear27" path="res://Assets/Scenes/interactable.tscn" id="2_8717a"]
 [ext_resource type="Texture2D" uid="uid://ysdpbg3ft0o1" path="res://icon.svg" id="2_knba3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rl54r"]
 radius = 87.0
 
 [node name="SaplingPlant" type="Node2D" unique_id=209669759]
+script = ExtResource("1_kfyp1")
 
-[node name="InteractableArea" parent="." unique_id=1398153216 instance=ExtResource("1_7lvwt")]
+[node name="InteractableArea" parent="." unique_id=1398153216 instance=ExtResource("2_8717a")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" unique_id=1781064963]
 shape = SubResource("CircleShape2D_rl54r")
