@@ -98,7 +98,7 @@ _data = {
 &"moveUp1": SubResource("Animation_w3t24")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=688005446]
+[node name="Player" type="CharacterBody2D" unique_id=688005446 groups=["Players"]]
 script = ExtResource("1_7dd06")
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=2053512474]

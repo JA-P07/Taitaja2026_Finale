@@ -2,9 +2,20 @@
 
 [ext_resource type="Script" uid="uid://cgiysuevn8cp2" path="res://Assets/Scripts/rope.gd" id="1_vhw88"]
 
-[node name="Rope" type="Node2D" unique_id=1087010511 node_paths=PackedStringArray("player1", "player2", "line_2d")]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vhw88"]
+b = Vector2(0, 0)
+
+[node name="Rope" type="Node2D" unique_id=1087010511]
 script = ExtResource("1_vhw88")
-player1 = NodePath("")
-player2 = NodePath("")
-line_2d = NodePath("")
 spring_strength = 10.0
+
+[node name="RopeRay" type="RayCast2D" parent="." unique_id=1630048071]
+visible = false
+collision_mask = 4
+
+[node name="RopeCol" type="Area2D" parent="." unique_id=626472284]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RopeCol" unique_id=1931704296]
+shape = SubResource("SegmentShape2D_vhw88")
+
+[connection signal="area_entered" from="RopeCol" to="." method="_on_rope_col_area_entered"]

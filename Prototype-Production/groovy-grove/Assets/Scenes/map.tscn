@@ -87,13 +87,13 @@ playerID = 1
 width = 6.0
 default_color = Color(0.5, 0.21666667, 0, 1)
 
-[node name="Rope" parent="Level" unique_id=1087010511 node_paths=PackedStringArray("player1", "player2", "line_2d") instance=ExtResource("4_gup1m")]
-player1 = NodePath("../Player")
-player2 = NodePath("../Player2")
-line_2d = NodePath("../Line2D")
-
 [node name="OtherLayer1" type="TileMapLayer" parent="Level" unique_id=1307625791]
 position = Vector2(128, 0)
 scale = Vector2(1.5, 1.5)
 tile_map_data = PackedByteArray("AAD2//v/AQAEAAAAAAD5//z/AQAEAAAAAAD3//z/AQAEAAAAAAD4//7/AQAEAAAAAAD6//7/AQAEAAAAAAD3/wAAAQAEAAAAAAD4/wAAAQAEAAAAAAD7////AQAAAAAAAAD5////AQAAAAAAAAD7/wEAAQAAAAIAAAD8/wAAAQABAAIAAAD9//7/AQACAAIAAAD+//3/AQACAAMAAAD+//7/AQACAAMAAAD5//3/AQAEAAAAAAD7//z/AQAEAAAAAAA=")
 tile_set = SubResource("TileSet_al7xy")
+
+[node name="Rope" parent="Level" unique_id=1087010511 node_paths=PackedStringArray("player1", "player2", "line_2d") instance=ExtResource("4_gup1m")]
+player1 = NodePath("../Player")
+player2 = NodePath("../Player2")
+line_2d = NodePath("../Line2D")
