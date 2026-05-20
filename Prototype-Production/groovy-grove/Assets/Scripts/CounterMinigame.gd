@@ -1,35 +1,36 @@
 extends Node
-@export var counter = 0;
-@export var maxcounter = 10;
-@onready var status = $StatusText;
-var left = true;
-var success = false;
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+
+@onready var status = $Status
+
+var player
+var counter = 0
+var maxcounter = 10
+var left = true
+var success = false
+
+func start(p):
+	player = p
 	status.text = "Q OR RB"
-	
-func successCheck():
+
+func on_left_pressed():
+
+	if success or !left:
+		return
+
+	counter += 1
+	left = false
+	check_success()
+
+func on_right_pressed():
+
+	if success or left:
+		return
+
+	counter += 1
+	left = true
+	check_success()
+
+func check_success():
 	if counter >= maxcounter:
 		success = true
-		print(success)
 		status.text = "YOU WIN"
-	else:
-		pass
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float):
-	
-	if left == true and success == false:
-		successCheck()
-		if Input.is_action_just_pressed("MiniGame_left"):
-			counter = counter + 1;
-			print(counter)
-			left = false;
-			status.text = "E OR RB"
-	elif  left == false and success == false:
-		if Input.is_action_just_pressed("MiniGame_right"):
-			counter = counter + 1;
-			print(counter)
-			left = true;
-			status.text = "Q OR LB"
-	else:
-		pass
