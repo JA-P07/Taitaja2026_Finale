@@ -2,9 +2,28 @@
 
 [ext_resource type="Script" uid="uid://d2ol6dciy4ai7" path="res://Assets/Scripts/task_area.gd" id="1_e42hs"]
 [ext_resource type="Texture2D" uid="uid://ysdpbg3ft0o1" path="res://icon.svg" id="2_x5nbs"]
+[ext_resource type="Theme" uid="uid://3n2j5utityk8" path="res://Assets/Sprites/Forest.tres" id="3_j01fb"]
+[ext_resource type="PackedScene" uid="uid://caknj5owear27" path="res://Assets/Scenes/interactable.tscn" id="4_xmm30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r72i0"]
+size = Vector2(46, 44)
 
 [node name="TaskArea" type="Node2D" unique_id=1495712362]
 script = ExtResource("1_e42hs")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=187478522]
 texture = ExtResource("2_x5nbs")
+
+[node name="Label" type="Label" parent="." unique_id=1087876020]
+offset_left = -65.0
+offset_top = -86.0
+offset_right = -25.0
+offset_bottom = -63.0
+theme = ExtResource("3_j01fb")
+text = "DAMAGED"
+
+[node name="InteractableArea" parent="." unique_id=1398153216 instance=ExtResource("4_xmm30")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" unique_id=1038176635]
+position = Vector2(27, -36)
+shape = SubResource("RectangleShape2D_r72i0")

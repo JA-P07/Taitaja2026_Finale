@@ -14,6 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://cs3ttjbpym02i" path="res://Assets/Scenes/task_area.tscn" id="10_rofci"]
 [ext_resource type="Texture2D" uid="uid://dy516meqm2ll6" path="res://Assets/Sprites/sign.png" id="12_3j4k7"]
 [ext_resource type="Theme" uid="uid://3n2j5utityk8" path="res://Assets/Sprites/Forest.tres" id="13_rofci"]
+[ext_resource type="PackedScene" uid="uid://c8fll0iy2bh6" path="res://Assets/Scenes/sapling_plant.tscn" id="15_ax4bj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rofci"]
+size = Vector2(250, 20)
 
 [node name="Map" type="Node2D" unique_id=1359664376 groups=["trash"]]
 
@@ -34,7 +38,7 @@ tile_set = ExtResource("1_j0ydg")
 
 [node name="InteractablesTiles" type="TileMapLayer" parent="Level" unique_id=82966191]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAGAP7/AgABAAEAAAD9//7/AgAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAGAP7/AgABAAEAAAD9//7/AgAEAAEAAAA3AAAAAgAIAAAAAAA3AAYAAgAIAAAAAAA9AAYAAgAIAAAAAABDAP//AgAIAAAAAABAAPv/AgAIAAAAAAA=")
 tile_set = ExtResource("1_j0ydg")
 
 [node name="Player" parent="Level" unique_id=688005446 instance=ExtResource("3_yq1se")]
@@ -79,8 +83,30 @@ position = Vector2(86, 267)
 position = Vector2(201, 38)
 
 [node name="TaskArea" parent="Level" unique_id=1495712362 instance=ExtResource("10_rofci")]
-position = Vector2(-95, -127)
+position = Vector2(-134, -167)
 required_item = "hammer"
+secondary_required_item = "ladder"
+
+[node name="hammer" parent="Level/TaskArea" unique_id=592793716 instance=ExtResource("5_sqtaw")]
+position = Vector2(-313, 82)
+
+[node name="hammer2" parent="Level/TaskArea" unique_id=437724361 instance=ExtResource("5_sqtaw")]
+position = Vector2(-261, 44)
+
+[node name="hammer3" parent="Level/TaskArea" unique_id=261042064 instance=ExtResource("5_sqtaw")]
+position = Vector2(-318, 21)
+
+[node name="trashbin" parent="Level/TaskArea" unique_id=732953453 instance=ExtResource("5_yq1se")]
+position = Vector2(-311, -83)
+
+[node name="DemoItem" parent="Level/TaskArea" unique_id=1709161254 instance=ExtResource("6_gup1m")]
+position = Vector2(-209, -155)
+
+[node name="WinArea" type="Area2D" parent="Level" unique_id=1010512567]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/WinArea" unique_id=684287577]
+position = Vector2(168, 1157)
+shape = SubResource("RectangleShape2D_rofci")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1201710568]
 stream = ExtResource("5_hbrqb")
@@ -121,3 +147,5 @@ theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 8
 text = "Nests->
 ^ Saplings"
+
+[node name="SaplingPlant" parent="." unique_id=1186128421 instance=ExtResource("15_ax4bj")]
