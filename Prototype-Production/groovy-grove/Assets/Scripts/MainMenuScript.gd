@@ -1,6 +1,6 @@
 extends Node
-@onready var start = $Play;
-@onready var quit = $Quit;
+@onready var start = $Buttons/Play
+@onready var quit = $Buttons/Quit
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
