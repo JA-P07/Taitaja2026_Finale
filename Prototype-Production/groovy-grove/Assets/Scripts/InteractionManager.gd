@@ -12,7 +12,7 @@ func register_area(area: InteractableArea):
 
 func unregister_area(area: InteractableArea):
 	var index = active_areas.find(area);
-	if index != 1:
+	if index != -1:
 		active_areas.remove_at(index);
 
 func _process(delta: float):
@@ -22,6 +22,7 @@ func _process(delta: float):
 		label.global_position = active_areas[0].global_position;
 		label.global_position.y -= 36;
 		label.global_position.x -= label.size.x / 2;
+		label.show();
 	else:
 		label.hide();
 
