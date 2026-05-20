@@ -24,7 +24,12 @@ func successCheck():
 		success = true;
 		print("success");
 		status.text = "YOU WIN"
->>>>>>> bd72413e444032102392acf2fa1bc2db91660f36
+=========
+func start(p):
+	player = p
+	status.text = "KEEP PRESSING E OR A"
+	timer.start()
+>>>>>>>>> Temporary merge branch 2
 
 func on_interact_pressed():
 
