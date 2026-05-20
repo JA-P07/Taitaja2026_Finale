@@ -17,6 +17,10 @@ boot_splash/use_filter=false
 boot_splash/image="uid://bdk0l40vbd6xj"
 config/icon="uid://bdk0l40vbd6xj"
 
+[autoload]
+
+InteractionManager="*uid://c4rvg0w8qedwt"
+
 [display]
 
 window/size/viewport_width=1280

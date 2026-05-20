@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d161kjpsdq1md"]
 
 [ext_resource type="Script" uid="uid://bip4vlbucqr5a" path="res://Assets/Scripts/ClickerMinigame.gd" id="1_6b11f"]
+[ext_resource type="FontFile" uid="uid://o8edqvs7pi3r" path="res://Assets/Fonts/Pixelmania.ttf" id="2_ewhpj"]
 
 [node name="clicker minigame" type="Node2D" unique_id=712723692]
 script = ExtResource("1_6b11f")
@@ -11,5 +12,8 @@ one_shot = true
 autostart = true
 
 [node name="Status" type="Label" parent="." unique_id=27759210]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 597.0
+offset_top = 314.0
+offset_right = 637.0
+offset_bottom = 337.0
+theme_override_fonts/font = ExtResource("2_ewhpj")
