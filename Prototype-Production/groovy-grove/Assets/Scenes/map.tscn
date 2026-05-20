@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b2s8dhyrb4yc0" path="res://Assets/Scenes/ladder.tscn" id="6_3j4k7"]
 [ext_resource type="PackedScene" uid="uid://dt34xso2u3v0" path="res://Assets/Scenes/demo_item.tscn" id="6_gup1m"]
 [ext_resource type="PackedScene" uid="uid://ms7da37g03nn" path="res://Assets/Scenes/seedbag.tscn" id="7_rofci"]
+[ext_resource type="PackedScene" uid="uid://cs3ttjbpym02i" path="res://Assets/Scenes/task_area.tscn" id="10_rofci"]
 [ext_resource type="Texture2D" uid="uid://dy516meqm2ll6" path="res://Assets/Sprites/sign.png" id="12_3j4k7"]
 [ext_resource type="Theme" uid="uid://3n2j5utityk8" path="res://Assets/Sprites/Forest.tres" id="13_rofci"]
 
@@ -76,6 +77,10 @@ position = Vector2(86, 267)
 
 [node name="DemoItem" parent="Level" unique_id=31896598 instance=ExtResource("6_gup1m")]
 position = Vector2(201, 38)
+
+[node name="TaskArea" parent="Level" unique_id=1495712362 instance=ExtResource("10_rofci")]
+position = Vector2(-95, -127)
+required_item = "hammer"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1201710568]
 stream = ExtResource("5_hbrqb")
