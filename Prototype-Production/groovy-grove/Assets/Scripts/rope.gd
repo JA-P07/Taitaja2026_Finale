@@ -5,6 +5,8 @@ extends Node2D
 @export var line_2d: Line2D
 @export var max_length: float = 150.0
 @export var spring_strength: float = 5.0
+@onready var _raycast = $RopeRay
+@onready var _ropeArea = $RopeCol
 
 func _physics_process(delta):
 	if not player1 or not player2:
@@ -27,3 +29,14 @@ func _physics_process(delta):
 func _process(_delta):
 	if line_2d and player1 and player2:
 		line_2d.points = [line_2d.to_local(player1.global_position), line_2d.to_local(player2.global_position)]
+		
+		_raycast.global_position = player1.global_position
+		
+		_raycast.target_position = _raycast.to_local(player2.global_position)
+		$RopeCol/CollisionShape2D.shape.a = Vector2(player1.global_position)
+		$RopeCol/CollisionShape2D.shape.b = Vector2(player2.global_position)
+		
+
+
+func _on_rope_col_area_entered(area: Area2D) -> void:
+	print("Something thorny hit the bush.")
