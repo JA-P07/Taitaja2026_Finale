@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://53xmaxep1q31" path="res://Assets/Scripts/player.gd" id="1_7dd06"]
 [ext_resource type="Texture2D" uid="uid://s2k68ay1t1bs" path="res://Assets/Sprites/playersheet.png" id="2_38rej"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t1xgp"]
-radius = 9.0
-
 [sub_resource type="Animation" id="Animation_7dd06"]
 length = 0.001
 tracks/0/type = "value"
@@ -98,6 +95,9 @@ _data = {
 &"moveUp1": SubResource("Animation_w3t24")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1xgp"]
+radius = 9.0
+
 [node name="Player" type="CharacterBody2D" unique_id=688005446 groups=["Players"]]
 collision_layer = 2
 script = ExtResource("1_7dd06")
@@ -109,9 +109,15 @@ hframes = 4
 vframes = 5
 frame = 12
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2664764 groups=["players"]]
+[node name="PlayerAnim" type="AnimationPlayer" parent="." unique_id=90925566]
+libraries/ = SubResource("AnimationLibrary_c3tg1")
+
+[node name="InteractionDetector" type="Area2D" parent="." unique_id=741311352]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetector" unique_id=2664764 groups=["players"]]
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_t1xgp")
 
-[node name="PlayerAnim" type="AnimationPlayer" parent="." unique_id=90925566]
-libraries/ = SubResource("AnimationLibrary_c3tg1")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1500213823 groups=["players"]]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_t1xgp")

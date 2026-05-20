@@ -1,4 +1,4 @@
-extends Node
+extends Area2D
 class_name InteractableArea
 
 @export var action_name: String = "INTERACT"
@@ -9,8 +9,10 @@ var interact: Callable = func():
 
 
 func _on_body_entered(body):
-	InteractionManager.register_area(self)
+	if body.is_in_group("Players"):
+		InteractionManager.register_area(self, body)
 
 
 func _on_body_exited(body):
-	InteractionManager.unregister_area(self)
+	if body.is_in_group("Players"):
+		InteractionManager.unregister_area(self, body)

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cvepr88mgigw6" path="res://Assets/Scenes/player.tscn" id="1_4ejv0"]
 [ext_resource type="PackedScene" uid="uid://pvb65av62yds" path="res://Assets/Scenes/rope.tscn" id="2_3fuio"]
-[ext_resource type="PackedScene" uid="uid://bgecekx75qftq" path="res://Assets/Scenes/invasive_plant.tscn" id="3_u224g"]
+[ext_resource type="PackedScene" uid="uid://dt34xso2u3v0" path="res://Assets/Scenes/demo_item.tscn" id="3_u224g"]
 
 [node name="Test" type="Node2D" unique_id=2134964169]
 
@@ -22,4 +22,5 @@ playerID = 1
 [node name="Line2D" type="Line2D" parent="." unique_id=699307430]
 default_color = Color(0.5, 0.21666667, 0, 1)
 
-[node name="Invasive_Plant" parent="." unique_id=1012296419 instance=ExtResource("3_u224g")]
+[node name="DemoItem" parent="." unique_id=31896598 instance=ExtResource("3_u224g")]
+position = Vector2(-66, 2)
