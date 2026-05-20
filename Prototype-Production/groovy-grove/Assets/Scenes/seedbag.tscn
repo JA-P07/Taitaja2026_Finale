@@ -7,8 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ae7g5"]
 radius = 14.0
 
-[node name="seedbag" type="Node2D" unique_id=740468564 groups=["seedbag"]]
-z_index = 20
+[node name="seedbag" type="Node2D" unique_id=740468564]
 script = ExtResource("1_gw0vm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1474203419]

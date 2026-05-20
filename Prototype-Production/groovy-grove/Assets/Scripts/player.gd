@@ -45,22 +45,15 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("interact%s" % playerID):
 		try_interact()
+		if current_minigame and current_minigame.has_method("on_interact_pressed"):
+			current_minigame.on_interact_pressed()
 	if Input.is_action_just_pressed("drop%s" % playerID):
 		drop_item()
-	
-	if Input.is_action_just_pressed("interact%s" % playerID):
-
-		if current_minigame:
-			current_minigame.on_interact_pressed()
-
 	if Input.is_action_just_pressed("MiniGame_left%s" % playerID):
-
-		if current_minigame:
+		if current_minigame and current_minigame.has_method("on_left_pressed"):
 			current_minigame.on_left_pressed()
-
 	if Input.is_action_just_pressed("MiniGame_right%s" % playerID):
-
-		if current_minigame:
+		if current_minigame and current_minigame.has_method("on_right_pressed"):
 			current_minigame.on_right_pressed()
 	
 func moveAnimation():
@@ -89,6 +82,13 @@ func drop_item():
 
 	if !is_holding:
 		return
+
+	if held_item_instance.has_node("InteractableArea"):
+		var interact_area = held_item_instance.get_node("InteractableArea")
+		interact_area.monitoring = true
+		interact_area.collision_layer = 0
+		interact_area.collision_mask = 2
+
 	held_item_instance.reparent(get_parent())
 	held_item_instance.global_position = global_position + Vector2(0, 16)
 	held_item_instance = null
