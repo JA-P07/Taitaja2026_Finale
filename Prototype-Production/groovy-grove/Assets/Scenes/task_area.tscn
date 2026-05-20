@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cs3ttjbpym02i"]
+
+[ext_resource type="Script" uid="uid://d2ol6dciy4ai7" path="res://Assets/Scripts/task_area.gd" id="1_e42hs"]
+
+[node name="TaskArea" type="Node2D" unique_id=1495712362]
+script = ExtResource("1_e42hs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=187478522]

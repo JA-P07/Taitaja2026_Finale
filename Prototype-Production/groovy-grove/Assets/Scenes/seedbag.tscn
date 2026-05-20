@@ -1,14 +1,22 @@
 [gd_scene format=3 uid="uid://ms7da37g03nn"]
 
+[ext_resource type="Texture2D" uid="uid://bcijo3vrjlnvp" path="res://Assets/Sprites/gardentools.png" id="1_ae7g5"]
 [ext_resource type="PackedScene" uid="uid://caknj5owear27" path="res://Assets/Scenes/interactable.tscn" id="1_wj7n7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ae7g5"]
+radius = 14.0
 
 [node name="seedbag" type="Node2D" unique_id=740468564]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1474203419]
+position = Vector2(0, -16)
+texture = ExtResource("1_ae7g5")
+hframes = 3
+vframes = 2
+frame = 5
 
 [node name="InteractableArea" parent="." unique_id=1398153216 instance=ExtResource("1_wj7n7")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" unique_id=1581959004]
+position = Vector2(0, -15)
 shape = SubResource("CircleShape2D_ae7g5")
