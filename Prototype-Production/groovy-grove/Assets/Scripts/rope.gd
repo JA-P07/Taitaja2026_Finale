@@ -35,8 +35,8 @@ func _process(_delta):
 		_raycast.target_position = _raycast.to_local(player2.global_position)
 		$RopeCol/CollisionShape2D.shape.a = Vector2(player1.global_position)
 		$RopeCol/CollisionShape2D.shape.b = Vector2(player2.global_position)
-		
+	
 
 
-func _on_rope_col_area_entered(area: Area2D) -> void:
-	print("Something thorny hit the bush.")
+func _on_rope_col_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+		print("Something thorny hit the bush.")

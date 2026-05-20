@@ -11,11 +11,13 @@ spring_strength = 10.0
 
 [node name="RopeRay" type="RayCast2D" parent="." unique_id=1630048071]
 visible = false
-collision_mask = 4
+collision_mask = 0
 
 [node name="RopeCol" type="Area2D" parent="." unique_id=626472284]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RopeCol" unique_id=1931704296]
 shape = SubResource("SegmentShape2D_vhw88")
 
-[connection signal="area_entered" from="RopeCol" to="." method="_on_rope_col_area_entered"]
+[connection signal="area_shape_entered" from="RopeCol" to="." method="_on_rope_col_area_shape_entered"]
