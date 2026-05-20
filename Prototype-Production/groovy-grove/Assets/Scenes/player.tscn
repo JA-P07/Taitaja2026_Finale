@@ -165,6 +165,7 @@ mix_rate = 48000
 
 [node name="Player" type="CharacterBody2D" unique_id=688005446 groups=["Players"]]
 collision_layer = 3
+collision_mask = 8
 script = ExtResource("1_7dd06")
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=2053512474]
