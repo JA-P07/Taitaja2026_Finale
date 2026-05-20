@@ -6,7 +6,7 @@ var left = true;
 var success = false;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	status.text = "PRESS LEFT"
+	status.text = "Q OR RB"
 	
 func successCheck():
 	if counter >= maxcounter:
@@ -24,12 +24,12 @@ func _process(delta: float):
 			counter = counter + 1;
 			print(counter)
 			left = false;
-			status.text = "PRESS RIGHT"
+			status.text = "E OR RB"
 	elif  left == false and success == false:
 		if Input.is_action_just_pressed("MiniGame_right"):
 			counter = counter + 1;
 			print(counter)
 			left = true;
-			status.text = "PRESS LEFT"
+			status.text = "Q OR LB"
 	else:
 		pass
