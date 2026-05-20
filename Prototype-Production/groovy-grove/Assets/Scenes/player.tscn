@@ -108,7 +108,7 @@ hframes = 4
 vframes = 5
 frame = 12
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2664764]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2664764 groups=["players"]]
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_t1xgp")
 
