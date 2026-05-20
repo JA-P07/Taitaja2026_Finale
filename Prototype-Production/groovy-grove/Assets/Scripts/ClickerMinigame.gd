@@ -8,12 +8,16 @@ var counter = 0
 var maxcounter = 10
 var success = false
 
-func start(p):
-	player = p
-	status.text = "KEEP PRESSING E OR A"
-	timer.start()
-
-func on_interact_pressed():
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	print ("start")
+	status.text = "KEEP PRESSING E OR (A)"
+	timer.start();
+func successCheck():
+	if counter == maxcounter:
+		success = true;
+		print("success");
+		status.text = "YOU WIN"
 
 	if success:
 		return

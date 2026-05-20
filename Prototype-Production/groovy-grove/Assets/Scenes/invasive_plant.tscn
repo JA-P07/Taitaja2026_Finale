@@ -1,21 +1,24 @@
 [gd_scene format=3 uid="uid://bgecekx75qftq"]
 
-[ext_resource type="Texture2D" uid="uid://ysdpbg3ft0o1" path="res://icon.svg" id="1_3urrp"]
 [ext_resource type="Script" uid="uid://dcocfc4np0u7y" path="res://Assets/Scripts/InvasivePlant.gd" id="1_kyue2"]
 [ext_resource type="PackedScene" uid="uid://caknj5owear27" path="res://Assets/Scenes/interactable.tscn" id="2_5xbbi"]
+[ext_resource type="Texture2D" uid="uid://6wiff0rq7cxo" path="res://Assets/Sprites/trash.png" id="2_kyue2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5v8u4"]
-radius = 22.090721
+radius = 24.0
 
 [node name="Invasive_Plant" type="Node2D" unique_id=1012296419]
 script = ExtResource("1_kyue2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=88975127]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_3urrp")
+position = Vector2(0, -32)
+texture = ExtResource("2_kyue2")
+hframes = 9
+frame = 6
 
 [node name="InteractableArea" parent="." unique_id=1398153216 instance=ExtResource("2_5xbbi")]
 action_name = "DESTROY"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" unique_id=1555757389]
+position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_5v8u4")
