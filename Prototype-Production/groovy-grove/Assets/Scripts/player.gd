@@ -57,10 +57,13 @@ func moveAnimation():
 		playerAnim.stop()
 
 func pickup_item(item_name, item_scene):
-	is_holding = true
-	held_item_name = item_name
-	held_item_scene = item_scene
-	print("Picked up ", item_name)
+	if is_holding:
+		pass
+	else:
+		is_holding = true
+		held_item_name = item_name
+		held_item_scene = item_scene
+		print("Picked up ", item_name)
 
 func drop_item():
 

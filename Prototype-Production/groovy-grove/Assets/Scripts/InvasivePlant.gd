@@ -5,6 +5,6 @@ extends Node
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 
-func _on_interact():
+func _on_interact(player):
 	print("interacted with plant, destroying plant");
 	self.queue_free();
