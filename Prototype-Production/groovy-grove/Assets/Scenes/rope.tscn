@@ -41,4 +41,22 @@ offset_bottom = 36.0
 theme_override_font_sizes/font_size = 32
 text = "ROPE HEALTH = 3"
 
+[node name="Label2" type="Label" parent="CanvasLayer/Control" unique_id=1829197040]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 44.0
+offset_right = 306.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 32
+text = "TASKS DONE = 0"
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control" unique_id=751071260]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 80.0
+offset_right = 306.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 32
+text = "INVASIVE PLANTS DESTROYED = 0"
+
 [connection signal="body_entered" from="RopeCol" to="." method="_on_rope_col_body_entered"]

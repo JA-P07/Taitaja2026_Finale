@@ -7,7 +7,7 @@ func _ready():
 
 func _on_interact(player):
 	if player.is_holding and player.held_item_instance.is_in_group("trash"):
-
+		InteractionManager.tasksDone += 0.5
 		player.held_item_instance.queue_free()
 
 		player.held_item_instance = null
