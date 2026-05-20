@@ -1,5 +1,5 @@
 extends Node
-@onready var players = get_tree().get_first_node_in_group("players")
+@onready var players = get_tree().get_first_node_in_group("Players")
 @onready var label = $Label;
 
 const base_text = "=E OR A= TO "
