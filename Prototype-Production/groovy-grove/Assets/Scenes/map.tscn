@@ -4,11 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://cvepr88mgigw6" path="res://Assets/Scenes/player.tscn" id="3_yq1se"]
 [ext_resource type="PackedScene" uid="uid://pvb65av62yds" path="res://Assets/Scenes/rope.tscn" id="4_gup1m"]
 [ext_resource type="AudioStream" uid="uid://dkldvkscsi242" path="res://Assets/Audio/mus_ambience.wav" id="5_hbrqb"]
+[ext_resource type="PackedScene" uid="uid://bcm323rulwei2" path="res://Assets/Scenes/trashbin.tscn" id="5_yq1se"]
+[ext_resource type="PackedScene" uid="uid://dt34xso2u3v0" path="res://Assets/Scenes/demo_item.tscn" id="6_gup1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0ydg"]
 size = Vector2(772, 679)
 
-[node name="Map" type="Node2D" unique_id=1359664376]
+[node name="Map" type="Node2D" unique_id=1359664376 groups=["trash"]]
 
 [node name="GroundLayer" type="TileMapLayer" parent="." unique_id=1367400025]
 scale = Vector2(1.5, 1.5)
@@ -32,6 +34,7 @@ tile_set = ExtResource("1_j0ydg")
 
 [node name="Player" parent="Level" unique_id=688005446 instance=ExtResource("3_yq1se")]
 position = Vector2(1, -9)
+collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Level/Player" unique_id=1684216198]
 zoom = Vector2(2, 2)
@@ -40,6 +43,7 @@ position_smoothing_speed = 2.0
 
 [node name="Player2" parent="Level" unique_id=887908336 instance=ExtResource("3_yq1se")]
 position = Vector2(55, 1)
+collision_mask = 1
 playerID = 1
 
 [node name="Line2D" type="Line2D" parent="Level" unique_id=1879265267]
@@ -62,3 +66,9 @@ autoplay = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SaplingArea" unique_id=213951328]
 position = Vector2(142, -912.5)
 shape = SubResource("RectangleShape2D_j0ydg")
+
+[node name="trashbin" parent="." unique_id=1612890923 instance=ExtResource("5_yq1se")]
+position = Vector2(86, 267)
+
+[node name="DemoItem" parent="." unique_id=31896598 instance=ExtResource("6_gup1m")]
+position = Vector2(201, 38)
