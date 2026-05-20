@@ -29,7 +29,7 @@ tile_set = ExtResource("1_j0ydg")
 
 [node name="InteractablesTiles" type="TileMapLayer" parent="Level" unique_id=82966191]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAGAP7/AgABAAEAAAD9//7/AgAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAGAP7/AgABAAEAAAABAPz/AgAAAAEAAAD9//7/AgAEAAEAAAA=")
 tile_set = ExtResource("1_j0ydg")
 
 [node name="Player" parent="Level" unique_id=688005446 instance=ExtResource("3_yq1se")]
@@ -55,17 +55,9 @@ player1 = NodePath("../Player")
 player2 = NodePath("../Player2")
 line_2d = NodePath("../Line2D")
 
-[node name="DemoItem" parent="Level" unique_id=31896598 instance=ExtResource("6_yq1se")]
-
-[node name="DemoItem2" parent="Level" unique_id=887449149 instance=ExtResource("6_yq1se")]
-
-[node name="Invasive_Plant" parent="Level" unique_id=1012296419 instance=ExtResource("5_yq1se")]
-
-[node name="Invasive_Plant2" parent="Level" unique_id=1033894321 instance=ExtResource("5_yq1se")]
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1201710568]
 stream = ExtResource("5_hbrqb")
-volume_db = -25.0
+volume_db = -10.0
 pitch_scale = 0.9
 autoplay = true
 
