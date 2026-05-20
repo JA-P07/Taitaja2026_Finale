@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://ms7da37g03nn"]
 
 [ext_resource type="Texture2D" uid="uid://bcijo3vrjlnvp" path="res://Assets/Sprites/gardentools.png" id="1_ae7g5"]
+[ext_resource type="Script" uid="uid://cgjrlandmr353" path="res://Assets/Scripts/seedbag.gd" id="1_gw0vm"]
 [ext_resource type="PackedScene" uid="uid://caknj5owear27" path="res://Assets/Scenes/interactable.tscn" id="1_wj7n7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ae7g5"]
 radius = 14.0
 
-[node name="seedbag" type="Node2D" unique_id=740468564]
+[node name="seedbag" type="Node2D" unique_id=740468564 groups=["seedbag"]]
+z_index = 20
+script = ExtResource("1_gw0vm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1474203419]
 position = Vector2(0, -16)

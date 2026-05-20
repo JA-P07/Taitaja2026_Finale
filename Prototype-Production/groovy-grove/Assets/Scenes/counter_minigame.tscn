@@ -8,6 +8,7 @@ position = Vector2(606, 305)
 script = ExtResource("1_bkter")
 
 [node name="StatusText" type="Label" parent="." unique_id=1500627938]
+z_index = 30
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

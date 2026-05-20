@@ -22,7 +22,8 @@ func _on_interact(player):
 		print("Both players need to be here")
 		return
 
-	if player.is_holding and player.held_item_instance.is_in_group("spade"):
+	if player.is_holding:
+		print("GAME OK")
 		var game = preload("res://Assets/Scenes/clicker_minigame.tscn").instantiate()
 
 		get_tree().root.add_child(game)
@@ -30,8 +31,8 @@ func _on_interact(player):
 		player.current_minigame = game
 		game.start(player)
 
-	elif player.is_holding and player.held_item_instance.is_in_group("seedbag"):
-
+	elif player.is_holding:
+		print("GAME OK")
 		var game = preload("res://Assets/Scenes/counter_minigame.tscn").instantiate()
 
 		get_tree().root.add_child(game)

@@ -8,12 +8,6 @@ var counter = 0
 var maxcounter = 10
 var success = false
 
-<<<<<<< HEAD
-func start(p):
-	player = p
-	status.text = "KEEP PRESSING E OR A"
-	timer.start()
-=======
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print ("start")
@@ -24,12 +18,10 @@ func successCheck():
 		success = true;
 		print("success");
 		status.text = "YOU WIN"
-=========
 func start(p):
 	player = p
 	status.text = "KEEP PRESSING E OR A"
 	timer.start()
->>>>>>>>> Temporary merge branch 2
 
 func on_interact_pressed():
 

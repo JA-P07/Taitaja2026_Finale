@@ -8,6 +8,7 @@
 size = Vector2(30, 64)
 
 [node name="ladder" type="Node2D" unique_id=2145660204 groups=["ladder"]]
+z_index = 20
 script = ExtResource("1_atbia")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=992294506]

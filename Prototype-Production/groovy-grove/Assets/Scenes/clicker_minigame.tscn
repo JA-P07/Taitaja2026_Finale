@@ -12,6 +12,7 @@ one_shot = true
 autostart = true
 
 [node name="Status" type="Label" parent="." unique_id=27759210]
+z_index = 30
 offset_left = 597.0
 offset_top = 314.0
 offset_right = 637.0
