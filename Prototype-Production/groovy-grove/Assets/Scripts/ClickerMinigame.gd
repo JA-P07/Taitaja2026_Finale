@@ -9,7 +9,7 @@ var success = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print ("start")
-	status.text = "KEEP PRESSING E OR A"
+	status.text = "KEEP PRESSING E OR (A)"
 	timer.start();
 func successCheck():
 	if counter == maxcounter:
