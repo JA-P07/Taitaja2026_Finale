@@ -1,7 +1,7 @@
 extends Node
 class_name InteractableArea
 
-@export var action_name: String = "interact"
+@export var action_name: String = "INTERACT"
 
 var interact: Callable = func():
 	print("interacted!")

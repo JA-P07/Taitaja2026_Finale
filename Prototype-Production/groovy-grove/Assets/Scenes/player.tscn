@@ -6,8 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1xgp"]
 radius = 9.0
 
-[node name="Player" type="CharacterBody2D" unique_id=688005446]
+[node name="Player" type="CharacterBody2D" unique_id=688005446 groups=["players"]]
 y_sort_enabled = true
+collision_layer = 2
 script = ExtResource("1_7dd06")
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=2053512474]
@@ -17,6 +18,6 @@ hframes = 4
 vframes = 5
 frame = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2664764]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2664764 groups=["players"]]
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_t1xgp")
