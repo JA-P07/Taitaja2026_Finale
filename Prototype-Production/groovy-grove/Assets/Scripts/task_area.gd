@@ -83,10 +83,8 @@ func finish_task() -> void:
 	update_visuals()
 	show_task_status("%s complete" % task_name)
 	emit_signal("task_completed", self)
-<<<<<<< HEAD
-=======
+
 	InteractionManager.tasksDone += 1
->>>>>>> 6ba8744a7ecf5c5b0efe14e6e15479490390851d
 
 func set_state(new_state: int) -> void:
 	state = new_state

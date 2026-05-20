@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bqqplho043dnq"]
+[gd_scene format=4 uid="uid://dlrwppairutw7"]
 
 [ext_resource type="TileSet" uid="uid://c30h2fg5tr066" path="res://Assets/Sprites/tileset.tres" id="1_j0ydg"]
 [ext_resource type="PackedScene" uid="uid://cvepr88mgigw6" path="res://Assets/Scenes/player.tscn" id="3_yq1se"]
@@ -319,10 +319,6 @@ theme_override_font_sizes/font_size = 8
 text = "Nests->
 ^ Saplings"
 
-<<<<<<< HEAD
-[node name="SaplingPlant" parent="." unique_id=209669759 instance=ExtResource("14_rofci")]
-position = Vector2(300, -333)
-=======
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1033027868]
 position = Vector2(1321, 66)
 texture = ExtResource("12_3j4k7")
@@ -384,4 +380,3 @@ texture = ExtResource("17_8n8pr")
 position = Vector2(-38, -889)
 scale = Vector2(2, 2)
 texture = ExtResource("17_8n8pr")
->>>>>>> 6ba8744a7ecf5c5b0efe14e6e15479490390851d

@@ -40,6 +40,8 @@ func _process(_delta):
 		$CanvasLayer/Control/Label.text = "ROPE HEALTH = %s" % ropeHealth
 		$CanvasLayer/Control/Label2.text = "TASKS DONE = %s" % InteractionManager.tasksDone
 		$CanvasLayer/Control/Label3.text = "INVASIVE PLANTS DESTROYED = %s" % InteractionManager.secTasksDone
+		if ropeHealth <= 0:
+			get_tree().change_scene_to_file("res://Assets/Scenes/GameOver.tscn");
 
 func _on_rope_col_body_entered(body: Node2D) -> void:
 	print("something thorny hit the rope?")
