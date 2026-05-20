@@ -1,13 +1,54 @@
-[gd_scene format=3 uid="uid://dj2gjbb68suos"]
+[gd_scene format=3 uid="uid://do20eil5qwy1j"]
 
-[ext_resource type="Script" uid="uid://j6bto8xq13fg" path="res://Assets/Scripts/CounterMinigame.gd" id="1_bkter"]
 [ext_resource type="Theme" uid="uid://3n2j5utityk8" path="res://Assets/Sprites/Forest.tres" id="2_bkter"]
+
+[sub_resource type="GDScript" id="GDScript_57y4n"]
+script/source = "extends Node
+
+signal completed(player)
+
+@onready var status = $Status
+
+var player
+var counter = 0
+var maxcounter = 10
+var left = true
+var success = false
+
+func start(p):
+	player = p
+	status.text = \"Q OR RB\"
+	counter = 0
+	left = true
+	success = false
+
+func on_left_pressed():
+	if success or !left:
+		return
+	counter += 1
+	left = false
+	check_success()
+
+func on_right_pressed():
+	if success or left:
+		return
+	counter += 1
+	left = true
+	check_success()
+
+func check_success():
+	if counter >= maxcounter:
+		success = true
+		status.text = \"YOU WIN\"
+		emit_signal(\"completed\", player)
+"
 
 [node name="Counter Minigame" type="Node2D" unique_id=944603482]
 position = Vector2(606, 305)
-script = ExtResource("1_bkter")
+script = SubResource("GDScript_57y4n")
 
 [node name="StatusText" type="Label" parent="." unique_id=1500627938]
+z_index = 30
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

@@ -3,8 +3,7 @@ class_name InteractableArea
 
 @export var action_name: String = "INTERACT"
 
-var interact: Callable = func():
-	print("interacted!")
+var interact: Callable = func(player):
 	pass
 
 

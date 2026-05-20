@@ -1,10 +1,48 @@
-[gd_scene format=3 uid="uid://d161kjpsdq1md"]
+[gd_scene format=3 uid="uid://b5m1jbyh378uv"]
 
-[ext_resource type="Script" uid="uid://bip4vlbucqr5a" path="res://Assets/Scripts/ClickerMinigame.gd" id="1_6b11f"]
 [ext_resource type="FontFile" uid="uid://o8edqvs7pi3r" path="res://Assets/Fonts/Pixelmania.ttf" id="2_ewhpj"]
 
+[sub_resource type="GDScript" id="GDScript_6b11f"]
+script/source = "extends Node
+
+signal completed(player)
+
+@onready var timer = $Timer
+@onready var status = $Status
+
+var player
+var counter = 0
+var maxcounter = 10
+var success = false
+
+func _ready() -> void:
+	status.text = \"KEEP PRESSING E OR (A)\"
+	timer.start()
+
+func start(p):
+	player = p
+	status.text = \"KEEP PRESSING E OR (A)\"
+	counter = 0
+	success = false
+	timer.start()
+
+func on_interact_pressed():
+	if success:
+		return
+	counter += 1
+	print(\"P\", player.playerID, \":\", counter)
+	check_success()
+
+func check_success():
+	if counter >= maxcounter:
+		success = true
+		status.text = \"YOU WIN\"
+		emit_signal(\"completed\", player)
+
+"
+
 [node name="clicker minigame" type="Node2D" unique_id=712723692]
-script = ExtResource("1_6b11f")
+script = SubResource("GDScript_6b11f")
 
 [node name="Timer" type="Timer" parent="." unique_id=1874597836]
 wait_time = 3.0
@@ -12,6 +50,7 @@ one_shot = true
 autostart = true
 
 [node name="Status" type="Label" parent="." unique_id=27759210]
+z_index = 30
 offset_left = 597.0
 offset_top = 314.0
 offset_right = 637.0
