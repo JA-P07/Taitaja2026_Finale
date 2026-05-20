@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var playerAnim = $PlayerAnim
 @onready var playerSprite = $PlayerSprite
 
+var current_minigame = null
+
 var held_item_name = ""
 var held_item_instance: Node2D = null
 var is_holding = false
@@ -45,6 +47,21 @@ func _physics_process(delta: float) -> void:
 		try_interact()
 	if Input.is_action_just_pressed("drop%s" % playerID):
 		drop_item()
+	
+	if Input.is_action_just_pressed("interact%s" % playerID):
+
+		if current_minigame:
+			current_minigame.on_interact_pressed()
+
+	if Input.is_action_just_pressed("MiniGame_left%s" % playerID):
+
+		if current_minigame:
+			current_minigame.on_left_pressed()
+
+	if Input.is_action_just_pressed("MiniGame_right%s" % playerID):
+
+		if current_minigame:
+			current_minigame.on_right_pressed()
 	
 func moveAnimation():
 	if velocity.y > 0 && Input.is_action_pressed("move_down%s" % playerID):
