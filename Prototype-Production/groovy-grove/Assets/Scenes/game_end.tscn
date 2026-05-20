@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwg08ieeu28dd"]
 
-[ext_resource type="Script" uid="uid://ch4r3tmd8trnh" path="res://Assets/Scripts/gameOver.gd" id="1_njspp"]
+[ext_resource type="Script" path="res://Assets/Scripts/gameOver.gd" id="1_njspp"]
 [ext_resource type="Theme" uid="uid://3n2j5utityk8" path="res://Assets/Sprites/Forest.tres" id="2_vw25x"]
 
 [node name="GameEnd" type="Control" unique_id=398997208]
