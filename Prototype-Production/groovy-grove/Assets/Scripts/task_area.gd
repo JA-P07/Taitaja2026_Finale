@@ -14,11 +14,21 @@ const INTERACTABLE_SCENE = preload("res://Assets/Scenes/interactable.tscn")
 @export var task_name: String = "Task"
 
 var progress: int = 0
+@export var interact_sound: AudioStream
 
 func _ready() -> void:
 	_ensure_interactable_area()
 	update_visuals()
 	add_to_group("TaskAreas")
+
+func _play_interact_sound() -> void:
+	if not interact_sound:
+		return
+	var audio = AudioStreamPlayer.new()
+	audio.stream = interact_sound
+	get_tree().root.add_child(audio)
+	audio.play()
+	audio.connect("finished", Callable(audio, "queue_free"))
 
 func _ensure_interactable_area() -> void:
 	if has_node("InteractableArea"):
@@ -32,9 +42,11 @@ func _ensure_interactable_area() -> void:
 
 func _on_interact(player) -> void:
 	if state == State.DAMAGED and can_start_task(player):
+		_play_interact_sound()
 		start_task(player)
 		return
 	if state == State.IN_PROGRESS:
+		_play_interact_sound()
 		add_progress()
 
 func can_start_task(player) -> bool:
